@@ -10,7 +10,7 @@ Official Homebrew tap for [Hydra](https://github.com/ja7ad/hydra) — a fast, re
 brew install ja7ad/tap/hydra
 ```
 
-### macOS Desktop App (GUI)
+### Desktop App (GUI)
 
 ```bash
 brew install --cask ja7ad/tap/hydra
