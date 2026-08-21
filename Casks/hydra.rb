@@ -1,11 +1,11 @@
 cask "hydra" do
-  version "0.3.5"
+  version "0.3.6"
 
   on_macos do
     arch arm: "arm64", intel: "x86_64"
 
-    sha256 arm:   "89a92ea348cd6d7dffa5fcfe554a2b2fdbaf1c951991a38f4550c64c1ffccbba",
-           intel: "b8ecea8d2fc6c23c88c27ef23dbf539f5aa2a209bbae4e29e710147fe97385de"
+    sha256 arm:   "700cc49342ddaec75ca94b1699a9815c8fcb4c92719c2c1a5f65230e9d727548",
+           intel: "10577b98f4b65ac70341b00e63eb2fd61c95514ad29b9d220d81b664d9220a18"
 
     url "https://github.com/ja7ad/hydra/releases/download/v#{version}/Hydra-#{version}-#{arch}.dmg"
 
@@ -18,8 +18,8 @@ cask "hydra" do
   on_linux do
     arch arm: "arm64", intel: "amd64"
 
-    sha256 arm:   "2be7e02d0129ae01d23d9aea7989336dbbf9bd39ed447956cf90dabd776fc689",
-           intel: "a084bffe3ba215698f129792330d20ca6b31fbb59f4962a4bfb07399b3c01d1c"
+    sha256 arm:   "3ff78bd7af0dc71304778bbd565409f053e06c32549b008c8113ac9fb32b8722",
+           intel: "6e3d4e84b51339c55660cf56c485f407b2e25633490e655f0c5765abd22a6739"
 
     url "https://github.com/ja7ad/hydra/releases/download/v#{version}/hydra-#{version}-linux-#{arch}.tar.gz"
 
