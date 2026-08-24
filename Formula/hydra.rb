@@ -1,8 +1,8 @@
 class Hydra < Formula
   desc "Fast, resilient, multi-source file retriever and download engine"
   homepage "https://github.com/ja7ad/hydra"
-  url "https://github.com/ja7ad/hydra/archive/refs/tags/v0.3.11.tar.gz"
-  sha256 "9b85af9a439fa61eb1cf86e11689c3327909a248b3215170c26912e75063b853"
+  url "https://github.com/ja7ad/hydra/archive/refs/tags/v0.3.12.tar.gz"
+  sha256 "8f9ab10fdbfaa1d8ccf243d8137e582f24ed07b2584b751c8b1e7dd230bd72b0"
   license "GPL-3.0-or-later"
   head "https://github.com/ja7ad/hydra.git", branch: "main"
 
