@@ -1,11 +1,11 @@
 cask "hydra" do
-  version "0.3.14"
+  version "0.4.0"
 
   on_macos do
     arch arm: "arm64", intel: "x86_64"
 
-    sha256 arm:   "87cdb9b1482a180dd04d80f96e0974450ecd183a8795b9e5a0ca64ce6583fa5e",
-           intel: "8ebb7a33d255a65aefc670e8e42e7ae612cfa021ee6b46fb43cff4c0b590d090"
+    sha256 arm:   "415fbfffc39696aee2935cedcfce444a5b949808a99b537c491090b76de8fd67",
+           intel: "2dbfe40be30ec4675f57ccb29dc77e0fd2c581b14ac030e49101710370e7283b"
 
     url "https://github.com/ja7ad/hydra/releases/download/v#{version}/Hydra-#{version}-#{arch}.dmg"
 
@@ -13,17 +13,20 @@ cask "hydra" do
 
     app "Hydra Download Manager.app"
     binary "#{appdir}/Hydra Download Manager.app/Contents/MacOS/hydra"
+    # The short second name, for the same reason the formula has one.
+    binary "#{appdir}/Hydra Download Manager.app/Contents/MacOS/hydra", target: "hya"
     manpage "#{appdir}/Hydra Download Manager.app/Contents/Resources/man/man1/hydra.1"
   end
   on_linux do
     arch arm: "arm64", intel: "amd64"
 
-    sha256 arm:   "720b9b556f877c3d8c3e37162f4140564090a7d928c796dd87f4d173edfefb16",
-           intel: "97188385c57fb77aebd17f0f28cb879a747d95ba50bc808b9d478a8f029a0b4e"
+    sha256 arm:   "33c00ea5fd782c9e297cc6cec95c84890c536b2ab60beef923e79f8a82ae8503",
+           intel: "3af8fe6ee9d20fcad17730b7a3cfd1ffaac5d32813233789bbe619d09bd9db1a"
 
     url "https://github.com/ja7ad/hydra/releases/download/v#{version}/hydra-#{version}-linux-#{arch}.tar.gz"
 
     binary "hydra-#{version}-linux-#{arch}/hydra"
+    binary "hydra-#{version}-linux-#{arch}/hydra", target: "hya"
     binary "hydra-#{version}-linux-#{arch}/hydra-gui"
     binary "hydra-#{version}-linux-#{arch}/hydra-host"
     manpage "hydra-#{version}-linux-#{arch}/man/hydra.1"

@@ -1,8 +1,8 @@
 class Hydra < Formula
   desc "Fast, resilient, multi-source file retriever and download engine"
   homepage "https://github.com/ja7ad/hydra"
-  url "https://github.com/ja7ad/hydra/archive/refs/tags/v0.3.14.tar.gz"
-  sha256 "7594138dd8dcd8031c2eab75a8d76163b1665682986f0f894f81678fce6a689a"
+  url "https://github.com/ja7ad/hydra/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "3e7c6fe0888dc326959a036746745b7329340e66bff127e465667a89f8200834"
   license "GPL-3.0-or-later"
   head "https://github.com/ja7ad/hydra.git", branch: "main"
 
@@ -14,9 +14,19 @@ class Hydra < Formula
     man1.install Dir["docs/man/*.1"] if Dir.exist?("docs/man")
 
     generate_completions_from_executable(bin/"hydra", "completions")
+
+    # "hydra" is also THC-Hydra, which Homebrew ships as hydra too, and three
+    # letters types better for a command run as often as a download. A
+    # symlink, so it follows whatever "hydra" this keg has.
+    bin.install_symlink bin/"hydra" => "hya"
+    # A completion script names the command it completes, so the short name
+    # needs its own set.
+    generate_completions_from_executable(bin/"hydra", "completions", "--bin-name", "hya",
+                                         base_name: "hya")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/hydra --version")
+    assert_match version.to_s, shell_output("#{bin}/hya --version")
   end
 end
